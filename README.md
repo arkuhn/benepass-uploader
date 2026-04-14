@@ -16,7 +16,6 @@ Claude will read the receipts, extract the sessions, open a browser for you to l
 git clone https://github.com/arkuhn/benepass-uploader
 cd benepass-uploader
 npm install
-npx playwright install chromium
 ```
 
 ## sessions.json
