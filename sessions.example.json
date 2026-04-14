@@ -1,0 +1,7 @@
+{
+  "benefitPlan": "2026 Mental Health HRA",
+  "sessions": [
+    { "date": "2026-01-05", "amount": 20.00, "provider": "Jane Smith, LCSW", "pdf": "superbill_jan_2026.pdf" },
+    { "date": "2026-01-19", "amount": 20.00, "provider": "Jane Smith, LCSW", "pdf": "superbill_jan_2026.pdf" }
+  ]
+}

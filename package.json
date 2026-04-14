@@ -1,0 +1,15 @@
+{
+  "name": "benepass-uploader",
+  "version": "1.0.0",
+  "description": "Automates submitting reimbursement claims to Benepass via browser automation",
+  "license": "MIT",
+  "packageManager": "yarn@4.9.1",
+  "scripts": {
+    "postinstall": "playwright install chromium",
+    "open-browser": "node open-browser.js",
+    "submit": "node submit.js"
+  },
+  "dependencies": {
+    "playwright": "^1.52.0"
+  }
+}
