@@ -3,11 +3,17 @@ const path = require('path');
 
 const BILLS_DIR = process.argv[2]
   ? path.resolve(process.argv[2].replace(/^~/, process.env.HOME))
-  : (() => { console.error('Usage: yarn submit <path/to/bills>'); process.exit(1); })();
+  : (() => { console.error('Usage: node submit.js <path/to/bills>'); process.exit(1); })();
 
 const START_INDEX = parseInt(process.argv[3] || '0');
 
 const { benefitPlan, sessions: SESSIONS } = require('./sessions.json');
+
+if (!benefitPlan) throw new Error('sessions.json missing "benefitPlan"');
+for (const s of SESSIONS) {
+  if (!s.date || !s.amount || !s.provider || !s.pdf)
+    throw new Error(`Session missing required fields: ${JSON.stringify(s)}`);
+}
 const EXPENSE_URL = 'https://app.getbenepass.com/expenses/create';
 
 const MONTH_NAMES = [
